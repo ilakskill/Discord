@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Join</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <h1>Signed Session Join</h1>
+      <p>Generate a signed join link to launch the web app session.</p>
+      <form id="link-form" class="stack">
+        <label>
+          Session ID
+          <input type="text" id="session-id" placeholder="session-123" required />
+        </label>
+        <button type="submit">Generate Signed Link</button>
+      </form>
+      <div id="link-output" class="card hidden">
+        <p><strong>Signed link</strong></p>
+        <a id="signed-link" href="#" target="_blank" rel="noreferrer"></a>
+      </div>
+    </main>
+    <script>
+      const form = document.getElementById("link-form");
+      const output = document.getElementById("link-output");
+      const link = document.getElementById("signed-link");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const sessionId = document.getElementById("session-id").value.trim();
+        if (!sessionId) {
+          return;
+        }
+        const response = await fetch(`/join-link?session=${encodeURIComponent(sessionId)}`);
+        const payload = await response.json();
+        link.textContent = payload.url;
+        link.href = payload.url;
+        output.classList.remove("hidden");
+      });
+    </script>
+  </body>
+</html>

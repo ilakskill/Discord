@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Session Audio Capture</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Live Session Audio Capture</h1>
+        <p id="session-meta"></p>
+      </div>
+      <div class="status" id="connection-status">Disconnected</div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Controls</h2>
+        <div class="controls">
+          <button id="start-button">Start Recording</button>
+          <button id="stop-button" disabled>Stop Recording</button>
+          <button id="download-button" disabled>Download WebApp Track</button>
+        </div>
+        <div class="controls">
+          <button id="export-button">Export Preferred Track</button>
+        </div>
+        <div class="clock-grid">
+          <div>
+            <h3>Clock Sync</h3>
+            <p>Offset: <span id="clock-offset">0</span> ms</p>
+            <p>Drift: <span id="clock-drift">0</span> ms/s</p>
+            <p>RTT: <span id="clock-rtt">0</span> ms</p>
+          </div>
+          <div>
+            <h3>Local Recording</h3>
+            <p>Chunks recorded: <span id="chunk-count">0</span></p>
+            <p>Track duration: <span id="track-duration">0.0</span> s</p>
+            <p>Export source: <span id="export-source">WebApp</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Participants</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Participant</th>
+              <th>Audio Level</th>
+              <th>Last Packet</th>
+              <th>Track Duration</th>
+              <th>Export Source</th>
+            </tr>
+          </thead>
+          <tbody id="participants-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="/public/app.js"></script>
+  </body>
+</html>

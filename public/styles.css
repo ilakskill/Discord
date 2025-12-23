@@ -1,0 +1,116 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: #f2f5f9;
+  color: #1d2433;
+}
+
+body {
+  margin: 0;
+  padding: 32px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+main {
+  display: grid;
+  gap: 24px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 8px;
+}
+
+.panel {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 24px rgba(25, 42, 70, 0.08);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #5865f2;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #9aa4f5;
+  cursor: not-allowed;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #ffd9d9;
+  color: #9c1c1c;
+  font-weight: 600;
+}
+
+.status.connected {
+  background: #dbfbe4;
+  color: #1d6b3a;
+}
+
+.clock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e6e8ef;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d6d9e2;
+  width: 100%;
+}
+
+.card {
+  background: #f7f9fc;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  color: #5865f2;
+}
