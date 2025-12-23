@@ -6,6 +6,8 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends ffmpeg \
   && rm -rf /var/lib/apt/lists/*
 
+RUN npm install -g npm@11.7.0
+
 COPY package.json tsconfig.base.json ./
 COPY packages ./packages
 COPY services/bot ./services/bot

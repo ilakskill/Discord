@@ -8,7 +8,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@discord-stack/shared": "workspace:*",
+    "@discord-stack/shared": "file:../../packages/shared",
     "dotenv": "^16.4.5"
   }
 }
