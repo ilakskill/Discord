@@ -1,0 +1,14 @@
+{
+  "name": "discord",
+  "version": "1.0.0",
+  "description": "Session service",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "express": "^4.19.2",
+    "ws": "^8.16.0"
+  }
+}
