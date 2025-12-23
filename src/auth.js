@@ -31,7 +31,12 @@ function verifyToken(token) {
     .createHmac('sha256', TOKEN_SECRET)
     .update(encodedBody)
     .digest('base64url');
-  if (!crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature))) {
+  const signatureBuffer = Buffer.from(signature || '');
+  const expectedBuffer = Buffer.from(expectedSignature);
+  if (signatureBuffer.length !== expectedBuffer.length) {
+    return { valid: false, error: 'invalid_signature' };
+  }
+  if (!crypto.timingSafeEqual(signatureBuffer, expectedBuffer)) {
     return { valid: false, error: 'invalid_signature' };
   }
   let payload;
