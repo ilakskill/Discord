@@ -4,6 +4,11 @@
   "description": "Minimal Discord bot starter with slash commands.",
   "main": "src/index.js",
   "type": "commonjs",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
   "scripts": {
     "start": "node src/index.js",
     "register": "node src/registerCommands.js",

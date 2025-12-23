@@ -27,6 +27,53 @@ interaction handling, and a small test suite.
 
 > Prefer `make`? See [Common tasks](#common-tasks).
 
+## Docker setup
+
+Follow these steps to run the full stack with Docker Compose.
+
+1. **Install Docker + Compose**
+
+   ```bash
+   docker --version
+   docker compose version
+   ```
+
+2. **Create a `.env` file** with at least your bot token:
+
+   ```bash
+   # create the file (if it doesn't exist)
+   touch .env
+
+   DISCORD_TOKEN=your-bot-token
+   ```
+
+   > On Windows PowerShell, use:
+   >
+   > ```powershell
+   > New-Item -Path .env -ItemType File -Force
+   > $env:DISCORD_TOKEN="your-bot-token"
+   > ```
+
+3. **Build and start the stack**
+
+   ```bash
+   docker compose up --build
+   ```
+
+4. **Verify containers are running**
+
+   ```bash
+   docker compose ps
+   ```
+
+### Optional edge proxy profile
+
+To run the optional nginx/caddy edge containers:
+
+```bash
+docker compose --profile edge up --build
+```
+
 ## Environment variables
 
 Create a `.env` file (or export variables in your shell) with the following keys.
