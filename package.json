@@ -1,0 +1,22 @@
+{
+  "name": "discord-bot",
+  "version": "0.1.0",
+  "description": "Minimal Discord bot starter with slash commands.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "register": "node src/registerCommands.js",
+    "lint": "eslint .",
+    "test": "node --test",
+    "test:unit": "node --test tests/unit",
+    "test:e2e": "node --test tests/e2e"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
