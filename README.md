@@ -54,9 +54,6 @@ Follow these steps to run the full stack with Docker Compose.
    > $env:DISCORD_TOKEN="your-bot-token"
    > ```
 
-   DISCORD_TOKEN=your-bot-token
-   ```
-
 3. **Build and start the stack**
 
    ```bash
