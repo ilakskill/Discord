@@ -47,6 +47,13 @@ Follow these steps to run the full stack with Docker Compose.
    DISCORD_TOKEN=your-bot-token
    ```
 
+   > On Windows PowerShell, use:
+   >
+   > ```powershell
+   > New-Item -Path .env -ItemType File -Force
+   > $env:DISCORD_TOKEN="your-bot-token"
+   > ```
+
 3. **Build and start the stack**
 
    ```bash
