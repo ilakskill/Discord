@@ -1,0 +1,16 @@
+{
+  "name": "@discord-stack/bot",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.16.0",
+    "discord.js": "^14.15.2",
+    "dotenv": "^16.4.5",
+    "@discord-stack/shared": "workspace:*"
+  }
+}
