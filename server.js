@@ -34,13 +34,24 @@ const validateSignature = (sessionId, signature) => {
   return safeEqual(signSession(sessionId), signature);
 };
 
+const serializeParticipant = (participant) => ({
+  id: participant.id,
+  sessionId: participant.sessionId,
+  displayName: participant.displayName,
+  joinedAt: participant.joinedAt,
+  lastPacketAt: participant.lastPacketAt,
+  level: participant.level,
+  trackDurationMs: participant.trackDurationMs,
+  source: participant.source,
+});
+
 const broadcastParticipants = (sessionId) => {
   const payload = JSON.stringify({
     type: "participants",
     sessionId,
-    participants: Array.from(participants.values()).filter(
-      (participant) => participant.sessionId === sessionId
-    ),
+    participants: Array.from(participants.values())
+      .filter((participant) => participant.sessionId === sessionId)
+      .map(serializeParticipant),
   });
 
   for (const [_, participant] of participants.entries()) {
