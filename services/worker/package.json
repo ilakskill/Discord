@@ -1,0 +1,14 @@
+{
+  "name": "@discord-stack/worker",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@discord-stack/shared": "workspace:*",
+    "dotenv": "^16.4.5"
+  }
+}
