@@ -8,8 +8,8 @@ const commands = [
 
 test("handleInteraction returns unknown_command for unsupported command", async () => {
   const interaction = {
-    type: "APPLICATION_COMMAND",
-    data: { name: "missing" },
+    isChatInputCommand: () => true,
+    commandName: "missing",
     reply: async () => {}
   };
 

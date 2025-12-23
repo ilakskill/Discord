@@ -6,8 +6,8 @@ const { handleInteraction } = require("../../src/handlers/interactionHandler");
 test("happy path: ping command replies", async () => {
   const replies = [];
   const interaction = {
-    type: "APPLICATION_COMMAND",
-    data: { name: "ping" },
+    isChatInputCommand: () => true,
+    commandName: "ping",
     reply: async (payload) => {
       replies.push(payload);
     }

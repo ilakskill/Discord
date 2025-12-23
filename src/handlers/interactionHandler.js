@@ -1,11 +1,15 @@
 const { findCommand } = require("../core/commandRegistry");
 
 const handleInteraction = async (interaction, commands) => {
-  if (!interaction || interaction.type !== "APPLICATION_COMMAND") {
+  const isChatInputCommand = interaction?.isChatInputCommand
+    ? interaction.isChatInputCommand()
+    : interaction?.type === "APPLICATION_COMMAND";
+
+  if (!interaction || !isChatInputCommand) {
     return { handled: false, reason: "unsupported" };
   }
 
-  const commandName = interaction.data?.name;
+  const commandName = interaction.commandName ?? interaction.data?.name;
   const command = findCommand(commands, commandName);
 
   if (!command) {
