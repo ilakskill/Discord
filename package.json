@@ -1,0 +1,11 @@
+{
+  "name": "discord-stack",
+  "private": true,
+  "workspaces": [
+    "services/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
